@@ -8,7 +8,12 @@ a = 1
 
 x_vals = np.linspace(-10, 10, 400)
 x = symbols('x')
+
+
+'''Function'''
 f = sin(x)
+
+
 f_func = lambdify(x, f, 'numpy')
 y_vals = f_func(x_vals)
 final_y = [0]*len(x_vals)
