@@ -3,15 +3,15 @@ import matplotlib.pyplot as plt
 from sympy import sin, symbols, diff, lambdify
 import math
 
-N = 100
+N = 10
 a = 1
 
-x_vals = np.linspace(-10, 10, 400)
+x_vals = np.linspace(-4, 6, 400)
 x = symbols('x')
 
 
 '''Function'''
-f = sin(x)
+f = sin(x)+x
 
 
 f_func = lambdify(x, f, 'numpy')
