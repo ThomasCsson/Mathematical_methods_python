@@ -14,7 +14,7 @@ def Fourier(f,N,period):
     plt.title('Given function')
     plt.show()
     a_0 = (1/period)*(quad(f,-period/2,period/2)[0])
-    final_y = [a_0/2]*len(x_values)
+    final_y = [a_0]*len(x_values)
     plt.plot(x_values,final_y)
     for n in range(1,N):
         y_values_cos, y_values_sin = [],[]
@@ -36,16 +36,17 @@ def Fourier(f,N,period):
     plt.title('Individual functions that will compose the Fourier series')
     plt.show()
     plt.plot(x_values,final_y)
-    plt.title('Final function')
+    plt.plot(x_values,y_values)
+    plt.title('Final function compared to initial function')
     plt.show()
     return
 
 '''Enter function here: '''
 '''Carefull to use notation that python will understand (math is imported)'''
-f = lambda x: abs((x%math.pi)-2)
+f = lambda x: x%math.pi
 
 '''Number of iterations'''
-N = 10
+N = 100
 
 '''Have to manually enter period of function'''
 period = 2*math.pi
